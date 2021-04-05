@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Responsive Homepage design with Bootstrap 4 and Animate css</title>
+	<link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <!--  ----------------------------Navgation bar & sliding header-------   -->
+		<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Creativo</a> <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Header sliding -->
+    <div class="head">
+      <div class="glo">GLOBAL</div>
+      <h1>Life Skill Assessment</h1>
+    </div>
+    
+    <!-- --------------- slider & honeycomb----------- -->
+    
+    <div class="img-slider">
+      <div class="slide active">
+        <img src="../main/img/1.jpg" alt="">
+        <div class="info">
+          <h2>What Are Life Skills?</h2>
+          <p>A skill is a learned ability to do something well. Therefore, Life Skills are the abilities that the individuals can develop to live a fruitful life.
+            Life Skills are psychosocial abilities that enable individuals to translate knowledge, attitudes and values regarding their concerns into well-informed and healthy behaviors. Empowered with these skills, young people are able to take decisions based on a logical process of “what to do, why to do, how to do and when to do”.           
+            World Health Organization(WHO) defines Life Skills as “the abilities for adaptive and positive behaviour that enable the individuals to deal effectively with the demands and challenges of everyday life”</p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="../main/img/2.jpg" alt="">
+          <div class="info">
+            <h2>Who Needs Life Skills?</h2>
+            <p>Everyone and anyone who wants to lead a meaningful life needs Life Skills.Life Skills are applicable to all ages of children and adolescents in schools since, young people in this age group seem to be most vulnerable to behavior related health problems. Life Skills are thus needed for the promotion of good health and well-being, rather than as an intervention aimed only at those already at risk.The Life Skills Education contributes to basic education; gender equality; democracy; good citizenship; childcare and protection; and the promotion of peace in the society. On an individual level, it increases self-confidence, self-esteem, assertiveness, social sensitivity and strong relationship bonds.</p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="../main/img/3.jpg" alt="">
+          <div class="info">
+            <h2>Importance Of Life Skills</h2>
+            <p>There are so many situations in our lives that cause worry. Life seems to be difficult. This is due to the fact that somewhere we lack the essential skills that are required to handle these difficult situations. This is where Life Skills come to our rescue.Life Skills helps us to regulate our lives. They contribute to our perceptions of self-confidence and Self-Esteem as well as motivate us to look after ourselves and others, handle day-to-day situations effectively and prevent any health and behavior problems. These skills are interrelated. When we try to work out a difficult situation, we always use more than one Life Skill.</p>
+          </div>
+        </div>
+        
+        <div class="navigation">
+          <div class="btn active"></div>
+          <div class="btn"></div>
+          <div class="btn"></div>
+          
+        </div>
+      </div>
+      
+      <script type="text/javascript">
+      var slides = document.querySelectorAll('.slide');
+      var btns = document.querySelectorAll('.btn');
+      let currentSlide = 1;
+  
+      // Javascript for image slider manual navigation
+      var manualNav = function(manual){
+        slides.forEach((slide) => {
+          slide.classList.remove('active');
+  
+          btns.forEach((btn) => {
+            btn.classList.remove('active');
+          });
+        });
+  
+        slides[manual].classList.add('active');
+        btns[manual].classList.add('active');
+      }
+  
+      btns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+          manualNav(i);
+          currentSlide = i;
+        });
+      });
+  
+      // Javascript for image slider autoplay navigation
+      var repeat = function(activeClass){
+        let active = document.getElementsByClassName('active');
+        let i = 1;
+  
+        var repeater = () => {
+          setTimeout(function(){
+            [...active].forEach((activeSlide) => {
+              activeSlide.classList.remove('active');
+            });
+  
+          slides[i].classList.add('active');
+          btns[i].classList.add('active');
+          i++;
+  
+          if(slides.length == i){
+            i = 0;
+          }
+          if(i >= slides.length){
+            return;
+          }
+          repeater();
+        }, 10000);
+        }
+        repeater();
+      }
+      repeat();
+      </script>
+      
+      <!-- ---------------10 images slider ----------- -->
+    <div class="slide-container">
+      <span class="slider-span" id="slider-span1"></span>
+      <span class="slider-span" id="slider-span2"></span>
+      <span class="slider-span" id="slider-span3"></span>
+      <span class="slider-span" id="slider-span4"></span>
+      <span class="slider-span" id="slider-span5"></span>
+      <span class="slider-span" id="slider-span6"></span>
+      <span class="slider-span" id="slider-span7"></span>
+      <span class="slider-span" id="slider-span8"></span>
+      <span class="slider-span" id="slider-span9"></span>
+      <span class="slider-span" id="slider-span10"></span>
+       
+      <div class="image-slider">
+        <div class="slider-div" id="slide-1">
+          <img src="../main/img/s1.jpg" alt="s1" class="img" id="img1">
+          <a href="#slider-span1" class="s-button" id="s-button"></a>
+        </div>
+        <div class="slider-div" id="slide-2">
+          <img src="../main/img/s2.jpg" alt="s2" class="img" id="img2">
+          <a href="#slider-span2" class="s-button" id="s-button"></a>
+        </div>
+        <div class="slider-div" id="slide-3">
+          <img src="../main/img/s3.jpg" alt="s3" class="img" id="img3">
+          <a href="#slider-span3" class="s-button" id="s-button"></a>
+        </div>
+        <div class="slider-div" id="slide-4">
+          <img src="../main/img/s4.jpg" alt="s4" class="img" id="img4">
+          <a href="#slider-span4" class="s-button" id="s-button"></a>
+        </div>
+        <div class="slider-div" id="slide-5">
+          <img src="../main/img/s5.jpg" alt="s5" class="img" id="img5">
+          <a href="#slider-span5" class="s-button" id="s-button"></a>
+        </div>
+        <div class="slider-div" id="slide-6">
+          <img src="../main/img/s6.jpg" alt="s6" class="img" id="img6">
+          <a href="#slider-span6" class="s-button" id="s-button"></a>
+        </div>
+        <div class="slider-div" id="slide-7">
+          <img src="../main/img/s7.jpg" alt="s7" class="img" id="img7">
+          <a href="#slider-span7" class="s-button" id="s-button"></a>
+        </div>
+        <div class="slider-div" id="slide-8">
+          <img src="../main/img/s8.jpg" alt="s8" class="img" id="img8">
+          <a href="#slider-span8" class="s-button" id="s-button"></a>
+        </div>
+        <div class="slider-div" id="slide-9">
+          <img src="../main/img/s9.jpg" alt="s9" class="img" id="img9">
+          <a href="#slider-span9" class="s-button" id="s-button"></a>
+        </div>
+        <div class="slider-div" id="slide-10">
+          <img src="../main/img/s10.jpg" alt="s10" class="img" id="img10">
+          <a href="#slider-span10" class="s-button" id="s-button"></a>
+        </div>
+      </div>
+    </div>
+
+
+      <!-- --------------- slider & honeycomb----------- -->
+            
+      <div class="STD">
+        <ul class="honeycomb">
+    <li class="honeycomb-cell">
+        <a href="#"><img class="honeycomb-cell_img" src="../main/img/hex 1.jpg"></a>
+        <div class="honeycomb-cell_title">GROUP A<small>1-2 std</small></div>
+    </li>
+    <li class="honeycomb-cell">
+        <a href="#"><img class="honeycomb-cell_img" src="../main/img/hex 2.jpg"></a>
+        <div class="honeycomb-cell_title">GROUP B<small>3-5 std</small></div>
+    </li>
+    <li class="honeycomb-cell">
+        <a href="#"><img class="honeycomb-cell_img" src="../main/img/hex 3.jpg"></a>
+        <div class="honeycomb-cell_title">GROUP C<small>6-8 std</small></div>
+    </li>
+    <li class="honeycomb-cell">
+        <a href="#"><img class="honeycomb-cell_img" src="../main/img/hex 4.jpg"></a>
+        <div class="honeycomb-cell_title">GROUP D<small>9-10 std</small></div>
+    </li>
+    <li class="honeycomb-cell">
+        <a href="#"><img class="honeycomb-cell_img" src="../main/img/hex 5.jpg"></a>
+        <div class="honeycomb-cell_title">GROUP E<small>11-12 std</small></div>
+    </li>
+    </ul>
+</div>
+<!-- ---------------footer------------------ -->
+    <footer class="footer-area">
+        <div class="footer-wave-box">
+            <div class="footer-wave footer-animation"></div>
+        </div>
+        <div class="main">
+            <div class="footer">
+                <div class="single-footer">
+                    <h4>about us</h4>
+                    <p>Lorem ipsum dolor sit amet, di dunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Excepteur sint qui officia deserunt Excepteur.</p>
+                    <div class="footer-social">
+                        <div class="wrapper">
+                            <div class="button">
+                              <div class="icon"><i class="fab fa-facebook"></i></div>
+                              <span>Facebook</span>
+                            </div>
+                            <div class="button">
+                              <div class="icon"><i class="fab fa-twitter"></i></div>
+                              <span>Twitter</span>
+                            </div>
+                            <div class="button">
+                              <div class="icon"><i class="fab fa-instagram"></i></div>
+                              <span>Instagram</span>
+                            </div>
+                                                 
+                            <div class="button">
+                              <div class="icon"><i class="fab fa-youtube"></i></div>
+                              <span>YouTube</span>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+                <div class="single-footer">
+                    <h4>main menu</h4>
+                    <ul>
+                        <li><a href=""><i class="fas fa-chevron-right"></i> home</a></li>
+                        <li><a href=""><i class="fas fa-chevron-right"></i> about us</a></li>
+                        <li><a href=""><i class="fas fa-chevron-right"></i> services</a></li>
+                        <li><a href=""><i class="fas fa-chevron-right"></i> gallery</a></li>
+                        <li><a href=""><i class="fas fa-chevron-right"></i> contact us</a></li>
+                    </ul>
+                </div>
+                <div class="single-footer">
+                    <h4>quick links</h4>
+                    <ul>
+                        <li><a href=""><i class="fas fa-chevron-right"></i> privacy policy</a></li>
+                        <li><a href=""><i class="fas fa-chevron-right"></i> terms & conditions</a></li>
+                        <li><a href=""><i class="fas fa-chevron-right"></i> disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="single-footer">
+                    <h4>contact us</h4>
+                    <ul>
+                        <li><a href=""><i class="fas fa-map-marker-alt"></i> North Street, Sydney, Australia</a></li>
+                        <li><a href=""><i class="fas fa-mobile-alt"></i> +88 0123 456 789</a></li>
+                        <li><a href=""><i class="far fa-envelope"></i> info@demo.com</a></li>
+                        <li><a href=""><i class="fas fa-globe-europe"></i> www.demo.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+    </footer>
+    <div class="copy">
+      <p>&copy; 2021 all rights reserved</p>
+  </div>
+</body>
+</html>
